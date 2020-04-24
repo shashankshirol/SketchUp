@@ -10,11 +10,11 @@ let isDrawing = false;
 console.log(nav_height);
 
 canvas.addEventListener('mousedown', start);
-canvas.addEventListener('touchstart', start);
+
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('touchmove', draw);
+
 canvas.addEventListener('mouseup', stop);
-canvas.addEventListener('touchend', stop);
+
 
 clearButton.addEventListener('click', clearCanvas);
 
