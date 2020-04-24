@@ -41,7 +41,9 @@ function stop () {
 }
 
 function clearCanvas () {
+  ctx.save();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.restore();
 }
 
 window.addEventListener('resize', resizeCanvas);
