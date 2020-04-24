@@ -4,7 +4,6 @@ const color_picker = document.querySelector('.color-picker');
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
-const nav_height = document.getElementById("navi").clientHeight;
 let isDrawing = false;
 
 console.log(nav_height);
@@ -41,9 +40,7 @@ function stop () {
 }
 
 function clearCanvas () {
-  ctx.save();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.restore();
 }
 
 window.addEventListener('resize', resizeCanvas);
