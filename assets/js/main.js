@@ -10,8 +10,11 @@ let isDrawing = false;
 console.log(nav_height);
 
 canvas.addEventListener('mousedown', start);
+canvas.addEventListener('touchstart', start);
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('touchmove', draw);
 canvas.addEventListener('mouseup', stop);
+canvas.addEventListener('touchend', stop);
 
 clearButton.addEventListener('click', clearCanvas);
 
@@ -20,16 +23,16 @@ function start (e) {
   draw(e);
 }
 
-function draw ({clientX: x, clientY: y}) {
+function draw ({offsetX: x, offsetY: y}) {
   if (!isDrawing) return;
   ctx.lineWidth = stroke_weight.value;
   ctx.lineCap = "round";
   ctx.strokeStyle = color_picker.value;
 
-  ctx.lineTo(x, y-nav_height);
+  ctx.lineTo(x, y+16);
   ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(x, y-nav_height);
+  ctx.moveTo(x, y+16);
 }
 
 function stop () {
