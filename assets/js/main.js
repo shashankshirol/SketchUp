@@ -17,16 +17,16 @@ function start (e) {
   draw(e);
 }
 
-function draw ({clientX: x, clientY: y}) {
+function draw ({offsetX: x, offsetY: y}) {
   if (!isDrawing) return;
   ctx.lineWidth = stroke_weight.value;
   ctx.lineCap = "round";
   ctx.strokeStyle = color_picker.value;
 
-  ctx.lineTo(x, y);
+  ctx.lineTo(x, y+16);
   ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(x, y);
+  ctx.moveTo(x, y+16);
 }
 
 function stop () {
