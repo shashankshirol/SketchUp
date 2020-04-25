@@ -7,6 +7,7 @@
     <title>SketchUp</title>
     <link rel="icon" href="assets/images/logo.png" type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/907c7b8224.js" crossorigin="anonymous"></script>
 </head>
 <body>
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -30,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navi">
             <a class="navbar-brand mb-0 h1" href="#">
                 <img src="assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    SketchUp
+                    <span class="font-weight-light">SketchUp</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,9 +41,10 @@
                             Made with <span style="color: red;">&hearts;</span> by Shashank Shirol.
                     </span>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 col-12 col-sm-5 stroke-weight" type="number" value="3" />
+                    <input class="form-control mr-sm-2 col-12 col-sm-4 stroke-weight" type="number" value="3" />
                     <input class="form-control mr-sm-2 col-12 col-sm-2 color-picker" type="color" value="#FF0000"/>
-                    <button class="btn btn-outline-danger col-12 col-sm-2 clear">X</button>
+                    <button class="btn btn-outline-info mr-sm-2 col-12 col-sm-2 save"><i class="far fa-save"></i></button>
+                    <button class="btn btn-outline-danger col-12 col-sm-2 clear"><i class="fas fa-redo-alt"></i></button>
                 </form>
             </div>
     </nav>

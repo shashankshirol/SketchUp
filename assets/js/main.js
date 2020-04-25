@@ -1,6 +1,7 @@
 const clearButton = document.querySelector('.clear');
 const stroke_weight = document.querySelector('.stroke-weight');
 const color_picker = document.querySelector('.color-picker');
+const save_btn = document.querySelector('.save');
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
@@ -11,6 +12,7 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stop);
 
 clearButton.addEventListener('click', clearCanvas);
+save_btn.addEventListener('click', download);
 
 function start (e) {
   isDrawing = true;
@@ -36,6 +38,19 @@ function stop () {
 
 function clearCanvas () {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function download(){
+  if(window.navigator.msSaveBlob){
+    window.navigator.msSaveBlob(canvas.msToBlob(), 'SketchUp-img.png');
+  } else{
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.href = canvas.toDataURL();
+    a.download = 'SketchUp-img.png';
+    a.click();
+    document.body.removeChild(a);
+  }
 }
 
 window.addEventListener('resize', resizeCanvas);
