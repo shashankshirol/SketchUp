@@ -6,14 +6,9 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 let isDrawing = false;
 
-console.log(nav_height);
-
 canvas.addEventListener('mousedown', start);
-
 canvas.addEventListener('mousemove', draw);
-
 canvas.addEventListener('mouseup', stop);
-
 
 clearButton.addEventListener('click', clearCanvas);
 
@@ -22,16 +17,16 @@ function start (e) {
   draw(e);
 }
 
-function draw ({offsetX: x, offsetY: y}) {
+function draw ({clientX: x, clientY: y}) {
   if (!isDrawing) return;
   ctx.lineWidth = stroke_weight.value;
   ctx.lineCap = "round";
   ctx.strokeStyle = color_picker.value;
 
-  ctx.lineTo(x, y+16);
+  ctx.lineTo(x, y);
   ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(x, y+16);
+  ctx.moveTo(x, y);
 }
 
 function stop () {
